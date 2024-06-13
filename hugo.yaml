@@ -1,0 +1,304 @@
+## Example Config file
+BaseURL: "https://cli.davidmarkus.nl"
+theme: "terminalcv"
+title: "Davidmarkus.nl"
+
+params:
+  version: "v0624"
+  description: "CLI CV David Markus"
+  prompt: "guest@davidmarkus.nl"
+  promptColor: aqua
+  #promptSimbols: ":~$"
+  promptSimbolsColor: lime
+  startxLocation: https://www.davidmarkus.nl
+  # hideSocialName: true
+  exitLocation: https://www.davidmarkus.nl
+  hidesource: true
+  greetingBannerColor: crimson
+  greetingBanner: |
+    ______            _     ____  ___           _                      _ 
+    |  _  \          (_)   | |  \/  |          | |                    | |
+    | | | |__ ___   ___  __| | .  . | __ _ _ __| | ___   _ ___   _ __ | |
+    | | | / _` \ \ / / |/ _` | |\/| |/ _` | '__| |/ / | | / __| | '_ \| |
+    | |/ / (_| |\ V /| | (_| | |  | | (_| | |  |   <| |_| \__ \_| | | | |
+    |___/ \__,_| \_/ |_|\__,_\_|  |_/\__,_|_|  |_|\_\\__,_|___(_)_| |_|_|
+                                                                    v0624
+
+  greetingColor: white
+  greeting: |
+    Welcome to my command line resume
+
+    Type 'help' or '?' for a list of available commands
+
+  bootsequence1: |
+    PMAP: PCID enabled
+    MarkuX Kernel Version 1.4.2: Wed May 29 23:21:41 CEST 2024; root:xnu-1699.22.73~1/RELEASE_X86_64
+
+  bootsequence2: |
+    vm_page_bootstrap: 987323 free pages and 53061 wired pages
+    kext submap [0xffffff7f8072e000 - 0xffffff8000000000], kernel text [0xffffff8000200000 - 0xffffff800072e000]
+    zone leak detection enabled
+    standard timeslicing quantum is 10000 us
+    mig_table_max_displ = 72
+    TSC Deadline Timer supported and enabled
+    MarkuXACPICPU: ProcessorId=1 LocalApicId=0 Enabled
+    MarkuXACPICPU: ProcessorId=2 LocalApicId=2 Enabled
+    MarkuXACPICPU: ProcessorId=3 LocalApicId=1 Enabled
+    MarkuXACPICPU: ProcessorId=4 LocalApicId=3 Enabled
+    MarkuXACPICPU: ProcessorId=5 LocalApicId=255 Disabled
+    MarkuXACPICPU: ProcessorId=6 LocalApicId=255 Disabled
+    MarkuXACPICPU: ProcessorId=7 LocalApicId=255 Disabled
+    MarkuXACPICPU: ProcessorId=8 LocalApicId=255 Disabled
+    calling mpo_policy_init for TMSafetyNet
+    Security policy loaded: Safety net for Rollback (TMSafetyNet)
+    calling mpo_policy_init for Sandbox
+    Security policy loaded: Seatbelt sandbox policy (Sandbox)
+    calling mpo_policy_init for Quarantine
+    Security policy loaded: Quarantine policy (Quarantine)
+
+  bootsequence3: |
+    Copyright 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994
+    The Regents of the University of California. All rights reserved.
+
+  bootsequence4: |
+
+    HN_ Framework successfully initialized
+    using 16384 buffer headers and 10240 cluster IO buffer headers
+    IOAPIC: Version 0x20 Vectors 64:87
+    ACPI: System State [S0 S3 S4 S5] (S3)
+    PFM64 0xf10000000, 0xf0000000
+    [ PCI configuration begin ]
+    MarkuXIntelCPUPowerManagement: Turbo Ratios 0046
+    MarkuXIntelCPUPowerManagement: (built 13:08:12 Jun 18 2011) initialization complete
+    console relocated to 0xf10000000
+    PCI configuration changed (bridge=16 device=4 cardbus=0)
+    [ PCI configuration end, bridges 12 devices 16 ]
+    mbinit: done [64 MB total pool size, (42/21) split]
+    Pthread support ABORTS when sync kernel primitives misused
+    com.MarkuX.MarkuXFSCompressionTypeZlib kmod start
+    com.MarkuX.MarkuXTrololoBootScreen kmod start
+    com.MarkuX.MarkuXFSCompressionTypeZlib load succeeded
+    com.MarkuX.MarkuXFSCompressionTypeDataless load succeeded
+
+    MarkuXIntelCPUPowerManagementClient: ready
+    BTCOEXIST off
+
+  bootsequence5: |
+    Waiting for IO drivers
+
+  bootsequence6: |
+    wlan0: Broadcom BCM4331 802.11 Wireless Controller
+    5.100.98.75
+
+    FireWire (OHCI) Lucent ID 5901 built-in now active, GUID c82a14fffee4a086; max speed s800.
+    rooting via boot-uuid from /chosen: F5670083-AC74-33D3-8361-AC1977EE4AA2
+    Waiting on <dict ID="0"><key>IOProviderClass</key><string ID="1">
+    IOResources</string><key>IOResourceMatch</key><string ID="2">boot-uuid-media</string></dict>
+    Got boot device = IOService:/MarkuXACPIPlatformExpert/PCI0@0/MarkuXACPIPCI/SATA@1F,2/
+    MarkuXIntelPchSeriesAHCI/PRT0@0/IOAHCIDevice@0/MarkuXAHCIDiskDriver/SarahI@sTheBestDriverIOAHCIBlockStorageDevice/IOBlockStorageDriver/
+    MarkuX SSD TS128C Media/IOGUIDPartitionScheme/Customer@2
+    BSD root: disk0s2, major 14, minor 2
+    Kernel is LP64
+    IOThunderboltSwitch::i2cWriteDWord - status = 0xe00002ed
+    IOThunderboltSwitch::i2cWriteDWord - status = 0x00000000
+    IOThunderboltSwitch::i2cWriteDWord - status = 0xe00002ed
+    IOThunderboltSwitch::i2cWriteDWord - status = 0xe00002ed
+    MarkuXUSBMultitouchDriver::checkStatus - received Status Packet, Payload 2: device was reinitialized
+    MottIsAScrub::checkstatus - true, Mott::Scrub
+    [IOBluetoothHCIController::setConfigState] calling registerService
+    AirPort_Brcm4331: Ethernet address e4:ce:8f:46:18:d2
+    IO80211Controller::dataLinkLayerAttachComplete():  adding MarkuXEFINVRAM notification
+    IO80211Interface::efiNVRAMPublished():  
+    Created virtif 0xffffff800c32ee00 p2p0
+    BCM5701Enet: Ethernet address c8:2a:14:57:a4:7a
+    Previous Shutdown Cause: 3
+    ZFS driver 3.8 [Flags: R/W].
+    ZFS volume name MarkuXroot
+
+  bootsequence7: |
+    DSMOS has arrived
+
+  bootsequence8: |
+    en1: 802.11d country code set to 'US'.
+    en1: Supported channels 1 2 3 4 5 6 7 8 9 10 11 36 40 44 48 52 56 60 64 100 104 108 112 116 120 124 128 132 136 140 149 153 157 161 165
+    MacAuthEvent en1   Auth result for: 00:60:64:1e:e9:e4  MAC AUTH succeeded
+    MacAuthEvent en1   Auth result for: 00:60:64:1e:e9:e4 Unsolicited  Auth
+    wlEvent: en1 en1 Link UP
+    Wireless: Link Up on wlan0
+    en1: BSSID changed to 00:60:64:1e:e9:e4
+    virtual bool IOHIDEventSystemUserClient::initWithTask(task*, void*, UInt32): 
+    Client task not privileged to open IOHIDSystem for mapping memory (e00002c1)
+
+  bootsequence9: |
+    [OSBoot1]
+    [OSBoot2]
+    [OSBoot3]
+    [OSBootTheme]
+
+
+    Boot Complete
+  #
+  #### original parameters
+
+  whois:
+    # settings:
+    #   useLess: true
+    details:
+      name: "John Doe"
+      profession: "Unknown"
+      location: "Somewhere"
+      email: "foo@someemail.com"
+      homelink: "https://myHomePage.com"
+      description: |
+        Here you can write something catchy about yourself
+
+  social:
+    # settings:
+    #   useLess: true
+    #   hideName: true
+    details:
+      - name: "github"
+        url: "https://github.com"
+      - name: "facebook"
+        url: "https://facebook.com"
+      - name: "myspace"
+        url: "https://myspace.com"
+      - name: "hi5"
+        url: "https://www.hi5.com"
+      - name: "instagram"
+        url: "https://instagram.com"
+      - name: "Another social"
+        url: "https://anothersocial.com"
+
+  work:
+    # settings:
+    #   useLess: true
+    details:
+      - jobTitle: Job With Red Title
+        color: red
+        company: "-"
+        location: somewhere
+        date: August 2010 - Present
+        description: Some description about this red title job
+
+      - jobTitle: Job with purple title
+        color: purple
+        company: "-"
+        location: somewhere elese
+        date: July 2000  - July 2010
+        description: Some description about this purple job
+
+      - jobTitle: Job with default color title
+        company: "-"
+        location: anywhere
+        date: July 2008 - 2010
+        description: Description about this default color job
+
+  education:
+    details:
+      - courseName: Red Color training
+        color: red
+        date: June 2019 - July 2019
+        description: Descrption about red color trianing
+
+      - courseName: Default color training
+        date: Sept 2004 - Jun 2008
+        #description: There is no need for description
+
+  skills:
+    settings:
+      useLess: true
+    details:
+      - name: Skill 1
+        percentage: 90
+        Description: you can add a description
+
+      - name: Skill 2
+        percentage: 30
+        #description: or you can leave it comented
+
+      - name: Skill 3
+        color: blue
+        percentage: 50
+        description: Skill names can have colors too
+
+  softskills:
+    # settings:
+    #   useLess: true
+    details:
+      - name: SoftSkill 1
+        color: red
+        percentage: 80
+        #description:
+
+      - name: SoftSkill 2
+        #color:
+        percentage: 90
+        description: Description
+
+  languages:
+    # settings:
+    #   useLess: true
+    details:
+      - name: English
+        color: Blue
+        percentage: 50
+        #description:
+
+      - name: Gibberish
+        percentage: 100
+        description: pasghettipigglywiggly
+
+  projects:
+    # settings:
+    #   useLess: true
+    details:
+      - title: Project Red
+        color: red
+        date: since 2019
+        link: https://example.com
+        description: Describing red stuff
+
+      - title: Project Blue
+        color: blue
+        date: since 2016
+        link: https://example.com/blue
+        #description: nothing to describe
+
+      - title: Project Default
+        date: Since 2017
+        link: https://example.com/default
+        #description: not there either
+
+  certifications:
+    # settings:
+    #   useLess: true
+    details:
+      - certName: Example Cert
+        company: Example Certifying Company
+        date: Date of Completion
+        badge: https://www.link.to.badge
+        #description: Lorem Ipsum
+
+  misc:
+    # settings:
+    #   useLess: true
+    commandName: newcommand
+    title: "This Section can have a different command name"
+    titleColor: teal
+    content: |
+      Here the title and the content can have different colors
+      The content can be multi
+
+      line
+
+      And spaces       will be respected as well
+      This section will have the default command: misc
+      but you can name it something else with the property
+      commandName: <String>
+      Give it a shot and try and uncomment the line 
+      commandName: newcommand
+      now instead of misc you can execute the newcommand for this section
+      Auto completion will know it too! :D
+
+    contentColor: orange
