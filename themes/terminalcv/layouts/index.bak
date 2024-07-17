@@ -418,46 +418,29 @@ jQuery(document).ready(function($) {
                           "please type 'help' or '?' for a list of available commands\n");
         }
     }, {
+        prompt: '[[;{{ .Site.Params.promptColor | default "grey" }};]{{ .Site.Params.prompt }}][[;{{ .Site.Params.promptSimbolsColor | default "grey" }};]{{.Site.Params.promptSimbols | default ":~$"}}]' + " ",
 
 
-        {{ if .Site.Params.bootsequence1 }} 
+        {{ if .Site.Params.bootsequence9 }} 
           greetings: false,
           onInit: function(term) {
             term.pause();
             setTimeout(function() {
-               term.typing('echo', 1, '{{ .Site.Params.bootsequence1 }}', function() { });
+               term.typing('echo', 5, '{{ .Site.Params.bootsequence9 }}', function() { });
             }, 1);
             setTimeout(function() {
-               term.echo('{{ .Site.Params.bootsequence2 }}');
-               term.typing('echo', 1, '{{ .Site.Params.bootsequence3 }}', function() { });
-            }, 600);
-            setTimeout(function() {
-               term.echo('{{ .Site.Params.bootsequence4 }}');
-               term.typing('echo', 1, '{{ .Site.Params.bootsequence5 }}', function() { });
-            }, 1200);
-            setTimeout(function() {
-               term.echo('{{ .Site.Params.bootsequence6 }}');
-               term.typing('echo', 1, '{{ .Site.Params.bootsequence7 }}', function() { });
-            }, 1600);
-            setTimeout(function() {
-               term.echo('{{ .Site.Params.bootsequence8 }}');
-               term.typing('echo', 1, '{{ .Site.Params.bootsequence9 }}', function() { });
-            }, 2000);
-            setTimeout(function() {
-               term.clear();
+              term.clear();
             }, 3000);
             setTimeout(function() {
-               /* term.echo("[[b;{{ .Site.Params.greetingBannerColor | default "red" }};]{{ .Site.Params.greetingBanner }}]"); */
-               term.echo("[[b;{{ .Site.Params.greetingColor | default "green" }};]{{ .Site.Params.greeting }}]")
-               term.resume();
+              /* term.echo("[[b;{{ .Site.Params.greetingBannerColor | default "red" }};]{{ .Site.Params.greetingBanner }}]");  */
+              term.echo("[[b;{{ .Site.Params.greetingColor | default "green" }};]{{ .Site.Params.greeting }}]")
+              term.resume();
             }, 4000);
           },
         {{ else }} 
           greetings: "[[b;{{ .Site.Params.greetingColor | default "white" }};]{{ .Site.Params.greeting }}]",
         {{ end }} 
 
-
-        prompt: '[[;{{ .Site.Params.promptColor | default "grey" }};]{{ .Site.Params.prompt }}][[;{{ .Site.Params.promptSimbolsColor | default "grey" }};]{{.Site.Params.promptSimbols | default ":~$"}}]' + " ", 
         keydown: function(e, term) {
             if (animation) {
                 if (e.which == 68 && e.ctrlKey) { // CTRL+D
