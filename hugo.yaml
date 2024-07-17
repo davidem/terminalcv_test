@@ -6,7 +6,7 @@ title: "Davidmarkus.nl"
 params:
   version: "v0624"
   description: "CLI CV David Markus"
-  prompt: "guest@davidmarkus.nl"
+  prompt: "guest@termnialcv"
   promptColor: aqua
   #promptSimbols: ":~$"
   promptSimbolsColor: lime
