@@ -35,6 +35,8 @@ jQuery(document).ready(function($) {
         all: "Show all details",
     };
 
+    const sequence = [ '{{ .Site.Params.bootsequence1 }}', '{{ .Site.Params.bootsequence2 }}', '{{ .Site.Params.bootsequence3 }}', '{{ .Site.Params.bootsequence4 }}',  '{{ .Site.Params.bootsequence5 }}', '{{ .Site.Params.bootsequence6 }}', '{{ .Site.Params.bootsequence7 }}', '{{ .Site.Params.bootsequence8 }}', '{{ .Site.Params.bootsequence9 }}'  ];
+
     function progressBar(number) {
         var barLength = Math.round(number / 10);
         var barFilled = Array(barLength + 1).join("&#9611;");
@@ -423,41 +425,25 @@ jQuery(document).ready(function($) {
         {{ if .Site.Params.bootsequence1 }} 
           greetings: false,
           onInit: function(term) {
-            term.pause();
-            setTimeout(function() {
-               term.typing('echo', 1, '{{ .Site.Params.bootsequence1 }}', function() { });
-            }, 1);
-            setTimeout(function() {
-               term.echo('{{ .Site.Params.bootsequence2 }}');
-               term.typing('echo', 1, '{{ .Site.Params.bootsequence3 }}', function() { });
-            }, 600);
-            setTimeout(function() {
-               term.echo('{{ .Site.Params.bootsequence4 }}');
-               term.typing('echo', 1, '{{ .Site.Params.bootsequence5 }}', function() { });
-            }, 1200);
-            setTimeout(function() {
-               term.echo('{{ .Site.Params.bootsequence6 }}');
-               term.typing('echo', 1, '{{ .Site.Params.bootsequence7 }}', function() { });
-            }, 1600);
-            setTimeout(function() {
-               term.echo('{{ .Site.Params.bootsequence8 }}');
-               term.typing('echo', 1, '{{ .Site.Params.bootsequence9 }}', function() { });
-            }, 2000);
-            setTimeout(function() {
-               term.clear();
-            }, 3000);
-            setTimeout(function() {
-               /* term.echo("[[b;{{ .Site.Params.greetingBannerColor | default "red" }};]{{ .Site.Params.greetingBanner }}]"); */
-               term.echo("[[b;{{ .Site.Params.greetingColor | default "green" }};]{{ .Site.Params.greeting }}]")
-               term.resume();
-            }, 4000);
+                term.pause(true);
+                (function loop() {
+                    term.echo(sequence.shift());
+                    if (sequence.length) {
+                        setTimeout(loop, 500);
+                    } else {
+                        term.clear();
+                        term.echo("[[b;{{ .Site.Params.greetingBannerColor | default "red" }};]{{ .Site.Params.greetingBanner }}]"); 
+                        term.echo("[[b;{{ .Site.Params.greetingColor | default "green" }};]{{ .Site.Params.greeting }}]")
+                        term.resume();
+                    }
+                })();
           },
         {{ else }} 
           greetings: "[[b;{{ .Site.Params.greetingColor | default "white" }};]{{ .Site.Params.greeting }}]",
-        {{ end }} 
+        {{ end }}
 
+        prompt: '[[;{{ .Site.Params.promptColor | default "grey" }};]{{ .Site.Params.prompt }}][[;{{ .Site.Params.promptSimbolsColor | default "grey" }};]{{.Site.Params.promptSimbols | default ":~$"}}]' + " ",
 
-        prompt: '[[;{{ .Site.Params.promptColor | default "grey" }};]{{ .Site.Params.prompt }}][[;{{ .Site.Params.promptSimbolsColor | default "grey" }};]{{.Site.Params.promptSimbols | default ":~$"}}]' + " ", 
         keydown: function(e, term) {
             if (animation) {
                 if (e.which == 68 && e.ctrlKey) { // CTRL+D
